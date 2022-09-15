@@ -1,8 +1,6 @@
 (() => {
     "use strict";
     
-      import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js'
-
     const flsModules = {};
     function isWebp() {
         function testWebP(callback) {
