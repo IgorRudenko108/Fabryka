@@ -1,5 +1,8 @@
 (() => {
     "use strict";
+    
+      import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js'
+
     const flsModules = {};
     function isWebp() {
         function testWebP(callback) {
@@ -415,11 +418,7 @@
             }
         }));
     }
-    function FLS(message) {
-        setTimeout((() => {
-            if (window.FLS) console.log(message);
-        }), 0);
-    }
+  
     function uniqArray(array) {
         return array.filter((function(item, index, self) {
             return self.indexOf(item) === index;
