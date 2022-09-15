@@ -986,6 +986,7 @@ body.touch .menu__list > li._active .menu__sub-list {
   position: relative;
   overflow: hidden;
   padding-bottom: 58%;
+  background-color: #e8e8e8;
 }
 
 .menu__sub-img {
@@ -1030,6 +1031,7 @@ body.touch .menu__list > li._active .menu__sub-list {
   width: 55px;
   height: 55px;
   overflow: hidden;
+  background-color: #e8e8e8;
 }
 
 .spollers__title-img {
@@ -1760,6 +1762,7 @@ body.touch .menu__list > li._active .menu__sub-list {
 }
 
 .intro__slide-img-box {
+  background-color: #e8e8e8;
   height: 640px;
 }
 
@@ -2011,6 +2014,7 @@ body.touch .menu__list > li._active .menu__sub-list {
   position: relative;
   height: 100%;
   width: 100%;
+  background-color: #e8e8e8;
 }
 
 .card-slider__slide-bottom {
@@ -2209,6 +2213,7 @@ body.touch .menu__list > li._active .menu__sub-list {
 }
 
 .work__tabs-img-box {
+  background-color: #e8e8e8;
   margin-bottom: 40px;
   height: 180px;
   position: relative;
@@ -3272,8 +3277,35 @@ body.touch .menu__list > li._active .menu__sub-list {
   background-color: #ff7f00 !important;
 }
 
+.about__slider {
+  height: 100%;
+}
+
+.about__slider {
+  height: 200px;
+}
+
+.about__img-preview-box {
+  width: 100%;
+  display: block;
+}
+
+.about__img-preview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .foto__inner {
   position: relative;
+}
+
+.foto__img-box {
+  background-color: #e8e8e8;
 }
 
 .foto__img-box img {
@@ -5632,6 +5664,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     margin-top: 20px;
   }
 
+  .about__slider {
+    height: 250px;
+  }
+
   .footer__main {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -5923,6 +5959,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .company__slide-text {
     font-size: 15px;
+  }
+
+  .about__slider {
+    height: 230px;
   }
 
   .social__img-box {
@@ -6341,6 +6381,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
             flex: 0 1 100%;
     margin-bottom: 20px;
     max-width: 400px;
+  }
+
+  .about__slider {
+    height: 200px;
   }
 
   .footer__credit-img {

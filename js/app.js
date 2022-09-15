@@ -5190,7 +5190,7 @@
                 observer: true,
                 observeParents: true,
                 slidesPerView: 4,
-                spaceBetween: 5,
+                spaceBetween: 10,
                 autoHeight: false,
                 loop: true,
                 centeredSlides: false,
