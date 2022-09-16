@@ -477,34 +477,6 @@ body::after {
   padding: 40px 0;
 }
 
-.layer {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  z-index: 100;
-  visibility: hidden;
-  -webkit-transition: visibility 0.2s ease-in-out;
-  -o-transition: visibility 0.2s ease-in-out;
-  transition: visibility 0.2s ease-in-out;
-}
-
-.layer::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 100;
-}
-
-.dark-layer {
-  visibility: visible;
-}
-
 .form__wrapper {
   background-color: rgba(255, 255, 255, 0.6);
   padding: 10px 20px;
@@ -3263,26 +3235,9 @@ body.touch .menu__list > li._active .menu__sub-list {
   width: 100%;
 }
 
-.about__pagination.swiper-pagination-bullets {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-top: 12px;
-}
-
-.about__pagination .swiper-pagination-bullet-active {
-  background-color: #ff7f00 !important;
-}
-
 .about__slider {
-  height: 100%;
-}
-
-.about__slider {
-  height: 200px;
+  height: 230px;
+  padding-bottom: 30px !important;
 }
 
 .about__img-preview-box {
@@ -3298,6 +3253,20 @@ body.touch .menu__list > li._active .menu__sub-list {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.about__pagination.swiper-pagination-bullets {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 12px;
+}
+
+.about__pagination .swiper-pagination-bullet-active {
+  background-color: #ff7f00 !important;
 }
 
 .foto__inner {
@@ -5660,12 +5629,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     margin-bottom: 20px;
   }
 
-  .about__pagination.swiper-pagination-bullets {
-    margin-top: 20px;
+  .about__slider {
+    height: 260px;
   }
 
-  .about__slider {
-    height: 250px;
+  .about__pagination.swiper-pagination-bullets {
+    margin-top: 20px;
   }
 
   .footer__main {
@@ -5962,7 +5931,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .about__slider {
-    height: 230px;
+    height: 240px;
   }
 
   .social__img-box {
@@ -6384,7 +6353,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .about__slider {
-    height: 200px;
+    height: 210px;
   }
 
   .footer__credit-img {
