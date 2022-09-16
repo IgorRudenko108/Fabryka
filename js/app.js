@@ -591,7 +591,7 @@
                 document.documentElement.classList.add(className);
             }));
         }
-        function getHash() {
+        function functions_getHash() {
             if (location.hash) return location.hash.replace("#", "");
         }
         function setHash(hash) {
@@ -789,7 +789,7 @@
             const tabs = document.querySelectorAll("[data-tabs]");
             let tabsActiveHash = [];
             if (tabs.length > 0) {
-                const hash = getHash();
+                const hash = functions_getHash();
                 if (hash && hash.startsWith("tab-")) tabsActiveHash = hash.replace("tab-", "").split("-");
                 tabs.forEach(((tabsBlock, index) => {
                     tabsBlock.classList.add("_tab-init");
@@ -992,7 +992,7 @@
                 }
             }));
         }
-        function FLS(message) {
+        function functions_FLS(message) {
             setTimeout((() => {
                 if (window.FLS) console.log(message);
             }), 0);
@@ -1281,7 +1281,7 @@
                 if (!this.isOpen && this.lastFocusEl) this.lastFocusEl.focus(); else focusable[0].focus();
             }
             popupLogging(message) {
-                this.options.logging ? FLS(`[Попапос]: ${message}`) : null;
+                this.options.logging ? functions_FLS(`[Попапос]: ${message}`) : null;
             }
         }
         flsModules.popup = new Popup({});
@@ -5352,7 +5352,7 @@
                 this.scrollWatcherLogging(`Я перестал следить за ${targetElement.classList}`);
             }
             scrollWatcherLogging(message) {
-                this.config.logging ? FLS(`[Наблюдатель]: ${message}`) : null;
+                this.config.logging ? functions_FLS(`[Наблюдатель]: ${message}`) : null;
             }
             scrollWatcherCallback(entry, observer) {
                 const targetElement = entry.target;
@@ -5366,6 +5366,46 @@
             }
         }
         flsModules.watcher = new ScrollWatcher({});
+        let addWindowScrollEvent = false;
+        function digitsCounter() {
+            if (document.querySelectorAll("[data-digits-counter]").length) document.querySelectorAll("[data-digits-counter]").forEach((element => {
+                element.dataset.digitsCounter = element.innerHTML;
+                element.innerHTML = `0`;
+            }));
+            function digitsCountersInit(digitsCountersItems) {
+                let digitsCounters = digitsCountersItems ? digitsCountersItems : document.querySelectorAll("[data-digits-counter]");
+                if (digitsCounters.length) digitsCounters.forEach((digitsCounter => {
+                    digitsCountersAnimate(digitsCounter);
+                }));
+            }
+            function digitsCountersAnimate(digitsCounter) {
+                let startTimestamp = null;
+                const duration = parseInt(digitsCounter.dataset.digitsCounterSpeed) ? parseInt(digitsCounter.dataset.digitsCounterSpeed) : 1e3;
+                const startValue = parseInt(digitsCounter.dataset.digitsCounter);
+                const startPosition = 0;
+                const step = timestamp => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    digitsCounter.innerHTML = Math.floor(progress * (startPosition + startValue));
+                    if (progress < 1) window.requestAnimationFrame(step);
+                };
+                window.requestAnimationFrame(step);
+            }
+            function digitsCounterAction(e) {
+                const entry = e.detail.entry;
+                const targetElement = entry.target;
+                if (targetElement.querySelectorAll("[data-digits-counter]").length) digitsCountersInit(targetElement.querySelectorAll("[data-digits-counter]"));
+            }
+            document.addEventListener("watcherCallback", digitsCounterAction);
+        }
+        setTimeout((() => {
+            if (addWindowScrollEvent) {
+                let windowScroll = new Event("windowScroll");
+                window.addEventListener("scroll", (function(e) {
+                    document.dispatchEvent(windowScroll);
+                }));
+            }
+        }), 0);
         /*!
  * lightgallery | 2.6.0 | August 29th 2022
  * http://www.lightgalleryjs.com/
@@ -7259,6 +7299,6 @@ PERFORMANCE OF THIS SOFTWARE.
         spollers();
         tabs();
         showMore();
-        flsScroll.digitsCounter();
+        digitsCounter();
     })();
 })();
