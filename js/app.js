@@ -5175,12 +5175,14 @@
                 on: {}
             });
             if (document.querySelector(".intro-card__slider")) new core(".intro-card__slider", {
+                modules: [ Lazy ],
                 observer: true,
                 observeParents: true,
                 slidesPerView: 2,
                 spaceBetween: 20,
                 autoHeight: false,
                 loop: false,
+                lazy: true,
                 breakpoints: {
                     320: {
                         slidesPerView: 1.2,
@@ -5203,6 +5205,7 @@
                 }
             });
             if (document.querySelector(".section-category__slider")) new core(".section-category__slider", {
+                modules: [ Lazy ],
                 observer: true,
                 observeParents: true,
                 slidesPerView: 4,
@@ -5210,6 +5213,7 @@
                 autoHeight: false,
                 loop: true,
                 init: true,
+                lazy: true,
                 breakpoints: {
                     320: {
                         slidesPerView: 1.6,
@@ -5279,12 +5283,14 @@
                 }
             }));
             if (document.querySelector(".work__slider")) new core(".work__slider", {
+                modules: [ Lazy ],
                 observer: true,
                 observeParents: true,
                 slidesPerView: 2.4,
                 spaceBetween: 15,
                 autoHeight: false,
                 loop: true,
+                lazy: true,
                 breakpoints: {
                     320: {
                         slidesPerView: 1.2,
@@ -5308,7 +5314,7 @@
                 }
             });
             if (document.querySelector(".stars__slider")) new core(".stars__slider", {
-                modules: [ Navigation, Autoplay ],
+                modules: [ Navigation, Autoplay, Lazy ],
                 observer: true,
                 observeParents: true,
                 slidesPerView: 4,
@@ -5316,6 +5322,7 @@
                 autoHeight: false,
                 loop: true,
                 centeredSlides: false,
+                lazy: true,
                 navigation: {
                     prevEl: ".stars-button-prev",
                     nextEl: ".stars-button-next"
@@ -5349,7 +5356,7 @@
                 }
             });
             if (document.querySelector(".company__slider")) new core(".company__slider", {
-                modules: [ Navigation ],
+                modules: [ Navigation, Lazy ],
                 observer: true,
                 observeParents: true,
                 slidesPerView: 4,
@@ -5357,6 +5364,7 @@
                 autoHeight: false,
                 loop: true,
                 centeredSlides: false,
+                lazy: true,
                 navigation: {
                     prevEl: ".company-button-prev",
                     nextEl: ".company-button-next"
@@ -5390,7 +5398,7 @@
                 }
             });
             if (document.querySelector(".section-video__slider")) new core(".section-video__slider", {
-                modules: [ Navigation ],
+                modules: [ Navigation, Lazy ],
                 observer: true,
                 observeParents: true,
                 slidesPerView: 2,
@@ -5398,6 +5406,7 @@
                 autoHeight: false,
                 loop: true,
                 centeredSlides: false,
+                lazy: true,
                 navigation: {
                     prevEl: ".section-video__button-prev",
                     nextEl: ".section-video__button-next"
@@ -5427,7 +5436,7 @@
                 }
             });
             if (document.querySelector(".about__slider")) new core(".about__slider", {
-                modules: [ Pagination ],
+                modules: [ Pagination, Lazy ],
                 observer: true,
                 observeParents: true,
                 slidesPerView: 4,
@@ -5435,6 +5444,7 @@
                 autoHeight: false,
                 loop: true,
                 centeredSlides: false,
+                lazy: true,
                 pagination: {
                     el: ".about__pagination",
                     clickable: true
@@ -5465,7 +5475,7 @@
                 }
             });
             if (document.querySelector(".foto__slider")) new core(".foto__slider", {
-                modules: [ Navigation ],
+                modules: [ Navigation, Lazy ],
                 observer: true,
                 observeParents: true,
                 slidesPerView: 3,
@@ -5473,6 +5483,7 @@
                 autoHeight: false,
                 loop: true,
                 centeredSlides: false,
+                lazy: true,
                 navigation: {
                     prevEl: ".foto__button-prev",
                     nextEl: ".foto__button-next"
