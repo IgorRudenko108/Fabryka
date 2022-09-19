@@ -7217,6 +7217,35 @@ PERFORMANCE OF THIS SOFTWARE.
             let phone_inputs = document.querySelectorAll("[data-phone-pattern]");
             for (let elem of phone_inputs) for (let ev of [ "input", "blur", "focus" ]) elem.addEventListener(ev, eventCalllback);
         }));
+        function getTimeRemaining(endtime) {
+            let t = Date.parse(endtime) - Date.parse(new Date);
+            let seconds = Math.floor(t / 1e3 % 60);
+            let minutes = Math.floor(t / 1e3 / 60 % 60);
+            let hours = Math.floor(t / (1e3 * 60 * 60) % 24);
+            return {
+                total: t,
+                hours,
+                minutes,
+                seconds
+            };
+        }
+        function initializeClock(id, endtime) {
+            let clock = document.getElementById(id);
+            let hoursSpan = clock.querySelector(".hours");
+            let minutesSpan = clock.querySelector(".minutes");
+            let secondsSpan = clock.querySelector(".seconds");
+            function updateClock() {
+                let t = getTimeRemaining(endtime);
+                hoursSpan.innerHTML = ("0" + t.hours).slice(-2);
+                minutesSpan.innerHTML = ("0" + t.minutes).slice(-2);
+                secondsSpan.innerHTML = ("0" + t.seconds).slice(-2);
+                if (t.total <= 0) clearInterval(timeinterval);
+            }
+            updateClock();
+            let timeinterval = setInterval(updateClock, 1e3);
+        }
+        let deadline = new Date(Date.parse(new Date) + 15 * 24 * 60 * 60 * 1e3);
+        initializeClock("countdown", deadline);
         const formBtn = document.querySelectorAll(".form__btn");
         const formBody = document.querySelectorAll(".form__body");
         const formSuccess = document.querySelectorAll(".form__success");
