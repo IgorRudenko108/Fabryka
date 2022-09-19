@@ -1931,6 +1931,10 @@ body.touch .menu__list > li._active .menu__sub-list {
   margin-bottom: 40px;
 }
 
+.intro-card__slider {
+  display: none;
+}
+
 .intro-card__title {
   font-size: 18px;
 }
@@ -5311,6 +5315,15 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 }
 
+@media (max-width: 1440.98px) {
+  .footer__social-link img {
+    width: 35px;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 35px;
+            flex: 0 0 35px;
+  }
+}
+
 @media (max-width: 1199.98px) {
   .advantage-card {
     padding: 10px 15px;
@@ -5568,6 +5581,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .intro-card__container {
     margin: 0 -20px 0 0px;
+  }
+
+  .intro-card__slider {
+    display: block;
   }
 
   .intro-card__body {
