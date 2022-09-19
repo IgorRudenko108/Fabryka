@@ -5202,6 +5202,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 }
 
 @media (min-width: 991.98px) {
+  .section-category__slider {
+    display: block;
+  }
+
   .card-slider__slide-inner {
     border: none;
   }
@@ -5620,15 +5624,15 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     width: 100%;
   }
 
-  .section-category__slider {
-    display: block;
-  }
-
   .section-category__container {
     padding-right: 0;
   }
 
   .section-category__inner {
+    display: none;
+  }
+
+  .card-slider {
     display: none;
   }
 
