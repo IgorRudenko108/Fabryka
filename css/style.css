@@ -1926,6 +1926,23 @@ body.touch .menu__list > li._active .menu__sub-list {
   opacity: 0;
 }
 
+.intro-card__pc-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.intro-card__pc-column {
+  width: 50%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+}
+
 .intro-card {
   margin-top: -280px;
   margin-bottom: 40px;
