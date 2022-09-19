@@ -5052,7 +5052,8 @@
                     992: {
                         slidesPerView: 4,
                         spaceBetween: 10,
-                        centeredSlides: false
+                        centeredSlides: false,
+                        init: false
                     }
                 }
             });
@@ -5069,6 +5070,14 @@
                             pagination: {
                                 el: pagination[index],
                                 clickable: true
+                            },
+                            breakpoints: {
+                                320: {
+                                    init: false
+                                },
+                                992: {
+                                    init: true
+                                }
                             },
                             on: {
                                 init: function() {
