@@ -4985,6 +4985,7 @@
                 autoHeight: false,
                 speed: 800,
                 loop: true,
+                init: false,
                 effect: "slide",
                 autoplay: {
                     delay: 8e3,
