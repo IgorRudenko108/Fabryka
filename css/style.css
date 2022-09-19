@@ -1934,13 +1934,17 @@ body.touch .menu__list > li._active .menu__sub-list {
       flex-wrap: wrap;
   position: relative;
   z-index: 1;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  row-gap: 20px;
 }
 
 .intro-card__pc-column {
-  width: 50%;
+  width: calc(50% - 10px);
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 50%;
-          flex: 0 1 50%;
+      -ms-flex: 0 1 calc(50% - 10px);
+          flex: 0 1 calc(50% - 10px);
 }
 
 .intro-card {
@@ -5590,6 +5594,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .intro__input {
     background-color: #f5f5f5;
+  }
+
+  .intro-card__pc-wrapper {
+    display: none;
   }
 
   .intro-card {
