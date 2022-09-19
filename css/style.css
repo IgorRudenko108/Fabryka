@@ -5616,6 +5616,13 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     height: 100px;
   }
 
+  .intro-card__img {
+    width: 50px;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 50px;
+            flex: 0 1 50px;
+  }
+
   .section-category__slider {
     display: block;
   }
