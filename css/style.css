@@ -6451,6 +6451,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     font-size: 15px;
   }
 
+  .card-slider__slide-title {
+    font-size: 12px;
+  }
+
   .card-slider__price {
     font-size: 12px;
   }
@@ -6826,10 +6830,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .icon-menu span {
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
+    top: calc(50% - 0.0625rem);
   }
 
   .menu-open .icon-menu span {
@@ -6872,7 +6873,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .icon-menu::after {
-    bottom: 8px;
+    bottom: 7px;
   }
 }
 
