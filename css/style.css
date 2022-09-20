@@ -6053,7 +6053,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .icon-menu span {
-    top: calc(50% - 0.0625rem);
+    top: calc(50% - 0.1rem);
   }
 
   .menu-open .icon-menu span {
@@ -6067,14 +6067,14 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .menu-open .icon-menu::before {
-    top: calc(50% - 0.0625rem);
+    top: calc(50% - 0.1rem);
     -webkit-transform: rotate(-45deg);
         -ms-transform: rotate(-45deg);
             transform: rotate(-45deg);
   }
 
   .menu-open .icon-menu::after {
-    top: calc(50% - 0.0625rem);
+    top: calc(50% - 0.1rem);
     -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
             transform: rotate(45deg);
