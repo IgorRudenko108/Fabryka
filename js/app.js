@@ -5286,27 +5286,23 @@
                 modules: [ Lazy ],
                 observer: true,
                 observeParents: true,
-                slidesPerView: 2.4,
-                spaceBetween: 15,
+                slidesPerView: 1,
+                spaceBetween: 10,
                 autoHeight: false,
                 loop: true,
                 lazy: true,
                 breakpoints: {
                     320: {
-                        slidesPerView: 1.2,
-                        spaceBetween: 15
+                        slidesPerView: 1.2
                     },
-                    424: {
-                        slidesPerView: 1.6,
-                        spaceBetween: 15
+                    360: {
+                        slidesPerView: 1.6
                     },
                     480: {
-                        slidesPerView: 2.1,
-                        spaceBetween: 15
+                        slidesPerView: 2.1
                     },
                     576: {
-                        slidesPerView: 2.4,
-                        spaceBetween: 15
+                        slidesPerView: 2.4
                     },
                     768: {
                         init: false
