@@ -2328,6 +2328,10 @@ body .card-slider .swiper-pagination-bullet {
   display: none;
 }
 
+.work__slide {
+  min-width: 205px;
+}
+
 .work__slide-inner {
   position: relative;
 }
@@ -6143,6 +6147,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     -webkit-box-flex: 0;
         -ms-flex: 0 1 100%;
             flex: 0 1 100%;
+    -webkit-column-gap: 0;
+       -moz-column-gap: 0;
+            column-gap: 0;
   }
 
   .advantages__card-img {
@@ -6554,10 +6561,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     font-size: 10px;
   }
 
-  .work__form--mobile {
-    padding: 0 15px;
-  }
-
   .work__form--mobile .intro__policy-box {
     display: none;
   }
@@ -6589,6 +6592,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     text-align: center;
     font-size: 16px;
     color: #000;
+  }
+
+  .advantages__item {
+    row-gap: 15px;
   }
 
   .advantages__item-card {
@@ -6627,7 +6634,15 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .stars__slide-title {
-    font-size: 16px;
+    font-size: 15px;
+  }
+
+  .company__logo {
+    margin-bottom: 25px;
+  }
+
+  .company__slider {
+    height: auto;
   }
 
   .company__slide-text {
@@ -6753,7 +6768,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .section-padding {
-    padding: 30px 0 15px;
+    padding: 30px 0 25px;
   }
 
   .discount-label__title {
@@ -6761,34 +6776,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     max-width: 370px;
   }
 
-  .intro {
-    padding: 70px 10px 125px 10px;
+  .advantages__item-card {
+    height: 80px;
   }
 
-  .intro-card {
-    margin-top: -105px;
-  }
-
-  .intro-card__body {
-    height: 85px;
-    padding: 10px;
-  }
-
-  .intro-card__title {
-    font-size: 10px;
-    margin-bottom: 5px;
-  }
-
-  .intro-card__text {
-    font-size: 9px;
-  }
-
-  .card-slider__price {
-    font-size: 10px;
-  }
-
-  .card-slider__oldprice {
-    font-size: 8px;
+  .advantages__card-img {
+    max-width: 40px;
   }
 
   .discount__title {
@@ -6806,6 +6799,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .countdown {
     font-size: 27px;
+  }
+
+  .stars__slide-title {
+    font-size: 13px;
   }
 
   .section-video__bottom {
@@ -6856,10 +6853,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .work__mobile-number {
     width: 1.5625rem;
-  }
-
-  .advantages__card-title {
-    font-size: 0.9375rem;
   }
 
   .advantages__card-text {
@@ -6914,6 +6907,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .intro__proposal-title--first {
     padding-right: 1.875rem;
+  }
+
+  .advantages__card-title {
+    font-size: 0.875rem;
   }
 }
 
@@ -7196,6 +7193,18 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
       padding-right: calc(1.875rem + 2.5 * (100vw - 26.5rem) / 21.5);
     }
 }
+
+@supports (font-size: clamp( 0.875rem , 0.5668604651rem  +  1.1627906977vw , 1.125rem )) {
+    .advantages__card-title {
+      font-size: clamp( 0.875rem , 0.5668604651rem  +  1.1627906977vw , 1.125rem );
+    }
+}
+
+@supports not (font-size: clamp( 0.875rem , 0.5668604651rem  +  1.1627906977vw , 1.125rem )) {
+    .advantages__card-title {
+      font-size: calc(0.875rem + 0.25 * (100vw - 26.5rem) / 21.5);
+    }
+}
 }
 
 @media (max-width: 767.98px) and (min-width: 75em) {
@@ -7233,18 +7242,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 }
 
 @media (min-width: 20em) and (max-width: 48em) {
-@supports (font-size: clamp( 0.9375rem , 0.8035714286rem  +  0.6696428571vw , 1.125rem )) {
-    .advantages__card-title {
-      font-size: clamp( 0.9375rem , 0.8035714286rem  +  0.6696428571vw , 1.125rem );
-    }
-}
-
-@supports not (font-size: clamp( 0.9375rem , 0.8035714286rem  +  0.6696428571vw , 1.125rem )) {
-    .advantages__card-title {
-      font-size: calc(0.9375rem + 0.1875 * (100vw - 20rem) / 28);
-    }
-}
-
 @supports (font-size: clamp( 0.6875rem , 0.5089285714rem  +  0.8928571429vw , 0.9375rem )) {
     .advantages__card-text {
       font-size: clamp( 0.6875rem , 0.5089285714rem  +  0.8928571429vw , 0.9375rem );
