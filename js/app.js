@@ -5313,59 +5313,48 @@
                     }
                 }
             });
-            if (document.querySelector(".stars__slider")) {
-                new core(".stars__slider", {
-                    modules: [ Navigation, Autoplay, Lazy ],
-                    observer: true,
-                    observeParents: true,
-                    slidesPerView: 4,
-                    spaceBetween: 15,
-                    autoHeight: false,
-                    loop: true,
-                    centeredSlides: false,
-                    lazy: true,
-                    navigation: {
-                        prevEl: ".stars-button-prev",
-                        nextEl: ".stars-button-next"
+            if (document.querySelector(".stars__slider")) new core(".stars__slider", {
+                modules: [ Navigation, Autoplay, Lazy ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 4,
+                spaceBetween: 15,
+                autoHeight: false,
+                loop: true,
+                centeredSlides: false,
+                lazy: true,
+                navigation: {
+                    prevEl: ".stars-button-prev",
+                    nextEl: ".stars-button-next"
+                },
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1.3,
+                        spaceBetween: 10
                     },
-                    breakpoints: {
-                        320: {
-                            slidesPerView: 1.3,
-                            spaceBetween: 10
-                        },
-                        424: {
-                            slidesPerView: 1.7,
-                            spaceBetween: 10
-                        },
-                        480: {
-                            slidesPerView: 2,
-                            spaceBetween: 10
-                        },
-                        576: {
-                            slidesPerView: 2.4,
-                            spaceBetween: 10
-                        },
-                        768: {
-                            slidesPerView: 3.2,
-                            spaceBetween: 15
-                        },
-                        992: {
-                            slidesPerView: 4,
-                            spaceBetween: 15,
-                            centeredSlides: false
-                        }
+                    424: {
+                        slidesPerView: 1.7,
+                        spaceBetween: 10
+                    },
+                    480: {
+                        slidesPerView: 2,
+                        spaceBetween: 10
+                    },
+                    576: {
+                        slidesPerView: 2.4,
+                        spaceBetween: 10
+                    },
+                    768: {
+                        slidesPerView: 3.2,
+                        spaceBetween: 15
+                    },
+                    992: {
+                        slidesPerView: 4,
+                        spaceBetween: 15,
+                        centeredSlides: false
                     }
-                });
-                let autoPlay = document.querySelector(".stars__slider");
-                autoPlay.addEventListener("mouseenter", (function(e) {
-                    sliderAutoPlay.params.autoplay.disableOnInteraction = false;
-                    sliderAutoPlay.params.autoplay.delay = 500;
-                    sliderAutoPlay.autoplay.start();
-                }));
-                autoPlay.addEventListener("mouseleave", (function(e) {
-                    sliderAutoPlay.autoplay.stop();
-                }));
-            }
+                }
+            });
             if (document.querySelector(".company__slider")) new core(".company__slider", {
                 modules: [ Navigation, Lazy ],
                 observer: true,
