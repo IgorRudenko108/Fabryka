@@ -5857,6 +5857,11 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .section-category__title {
     font-size: 18px;
+    margin-bottom: 30px;
+  }
+
+  .section-padding {
+    padding: 30px 0;
   }
 
   .form__success-img {
@@ -6258,12 +6263,14 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .icon-menu {
+    height: 30px;
     width: 55px;
   }
 
   .discount-label {
     width: 100px;
     height: 70px;
+    top: 40%;
   }
 
   .discount-label__text {
@@ -6642,11 +6649,38 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 @media (max-width: 424.98px) {
   .section-category__title {
     font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .section-padding {
+    padding: 20px 0;
   }
 
   .discount-label__title {
     font-size: 16px;
     max-width: 370px;
+  }
+
+  .intro {
+    padding: 70px 10px 125px 10px;
+  }
+
+  .intro-card {
+    margin-top: -105px;
+  }
+
+  .intro-card__body {
+    height: 85px;
+    padding: 10px;
+  }
+
+  .intro-card__title {
+    font-size: 10px;
+    margin-bottom: 5px;
+  }
+
+  .intro-card__text {
+    font-size: 9px;
   }
 
   .card-slider__price {
@@ -6761,8 +6795,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .icon-menu {
     display: block;
     position: absolute;
-    height: 30px;
-    width: 55px;
+    height: 40px;
+    width: 85px;
     cursor: pointer;
     z-index: 5;
   }
@@ -6776,7 +6810,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     transition: all 0.3s ease 0s;
     left: 20px;
     position: absolute;
-    width: 25px;
+    width: 35px;
     height: 4px;
     background-color: #fff;
     -webkit-clip-path: polygon(0 0%, 100% 0, 90% 100%, 0 100%);
@@ -6784,15 +6818,18 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .icon-menu::before {
-    top: 8px;
+    top: 12px;
   }
 
   .icon-menu::after {
-    bottom: 7px;
+    bottom: 10px;
   }
 
   .icon-menu span {
-    top: calc(50% - 0.0625rem);
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
   }
 
   .menu-open .icon-menu span {
@@ -6828,6 +6865,14 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     left: 10px;
     height: 3px;
     width: 23px;
+  }
+
+  .icon-menu::before {
+    top: 8px;
+  }
+
+  .icon-menu::after {
+    bottom: 8px;
   }
 }
 
