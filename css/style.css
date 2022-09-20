@@ -2157,7 +2157,7 @@ body .card-slider .swiper-pagination-bullet {
   padding: 0;
 }
 
-.section-category-interesting .section-category__column:last-child {
+.section-category__column--last {
   opacity: 0;
   visibility: hidden;
   width: 0;
@@ -6048,6 +6048,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .discount__title {
     font-size: 18px;
+  }
+
+  .discount__form-box {
+    padding: 15px 0;
   }
 
   .stars__slider {
