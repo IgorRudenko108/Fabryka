@@ -5626,6 +5626,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .intro__input {
     height: 40px;
     background-color: #f5f5f5;
+    font-size: 13px;
   }
 
   .intro-card__pc-wrapper {
@@ -6059,7 +6060,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     opacity: 0;
   }
 
-  .menu-open .icon-menu span,
   .menu-open .icon-menu::before,
   .menu-open .icon-menu::after {
     -webkit-clip-path: polygon(0 0%, 100% 0, 100% 100%, 0 100%);
@@ -6067,14 +6067,14 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .menu-open .icon-menu::before {
-    top: calc(50% - 0.1rem);
+    top: calc(50% - 0.0625rem);
     -webkit-transform: rotate(-45deg);
         -ms-transform: rotate(-45deg);
             transform: rotate(-45deg);
   }
 
   .menu-open .icon-menu::after {
-    top: calc(50% - 0.1rem);
+    top: calc(50% - 0.0625rem);
     -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
             transform: rotate(45deg);
@@ -6590,7 +6590,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     display: block;
     margin: 0 auto;
     text-align: center;
-    font-size: 16px;
+    font-size: 14px;
     color: #000;
   }
 
