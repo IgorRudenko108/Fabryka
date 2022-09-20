@@ -6037,6 +6037,11 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     height: 420px;
   }
 
+  .intro__slider-pagination .swiper-pagination-bullet {
+    width: 15px !important;
+    height: 15px !important;
+  }
+
   .card-slider__price {
     font-size: 14px;
   }
@@ -6219,6 +6224,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     font-size: 16px;
   }
 
+  .form__wrapper {
+    padding: 10px;
+  }
+
   .form__success-img {
     width: 40px;
     height: 40px;
@@ -6229,16 +6238,27 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     font-size: 14px;
   }
 
+  .header__top {
+    height: 30px;
+  }
+
   .header__callback-btn {
-    width: 70px;
+    width: 55px;
+    height: 30px;
   }
 
   .header__callback-mobile {
-    right: 15px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .header__menu {
+    height: 30px;
   }
 
   .icon-menu {
-    width: 70px;
+    width: 55px;
   }
 
   .discount-label {
@@ -6346,7 +6366,11 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .intro {
-    padding: 95px 10px 160px 10px;
+    padding: 70px 10px 160px 10px;
+  }
+
+  .intro__proposal-item {
+    margin-bottom: 5px;
   }
 
   .intro__proposal-title {
@@ -6357,9 +6381,14 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     height: 275px;
   }
 
+  .intro__slider-pagination.swiper-pagination-bullets {
+    bottom: 10px !important;
+    left: calc(100% - 110px) !important;
+  }
+
   .intro__slider-pagination .swiper-pagination-bullet {
-    width: 15px !important;
-    height: 15px !important;
+    width: 10px !important;
+    height: 10px !important;
   }
 
   .intro__content {
@@ -6381,6 +6410,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     -webkit-box-flex: 0;
         -ms-flex: 0 1 100%;
             flex: 0 1 100%;
+    font-size: 14px;
   }
 
   .intro__form-btn {
@@ -6731,8 +6761,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .icon-menu {
     display: block;
     position: absolute;
-    height: 40px;
-    width: 85px;
+    height: 30px;
+    width: 55px;
     cursor: pointer;
     z-index: 5;
   }
@@ -6746,7 +6776,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     transition: all 0.3s ease 0s;
     left: 20px;
     position: absolute;
-    width: 30px;
+    width: 25px;
     height: 4px;
     background-color: #fff;
     -webkit-clip-path: polygon(0 0%, 100% 0, 90% 100%, 0 100%);
@@ -6754,11 +6784,11 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .icon-menu::before {
-    top: 12px;
+    top: 8px;
   }
 
   .icon-menu::after {
-    bottom: 10px;
+    bottom: 7px;
   }
 
   .icon-menu span {
@@ -6795,7 +6825,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .icon-menu span,
   .icon-menu::before,
   .icon-menu::after {
-    left: 15px;
+    left: 10px;
+    height: 3px;
+    width: 23px;
   }
 }
 
