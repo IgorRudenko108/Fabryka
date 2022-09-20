@@ -1079,6 +1079,10 @@ body.touch .menu__list > li._active .menu__sub-list {
   display: none;
 }
 
+.icon-menu::after {
+  bottom: 10px;
+}
+
 .discount-label__wrapper {
   width: 100vw;
   height: 100vh;
@@ -6267,6 +6271,22 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     width: 55px;
   }
 
+  .icon-menu span,
+  .icon-menu::before,
+  .icon-menu::after {
+    left: 10px;
+    height: 3px;
+    width: 23px;
+  }
+
+  .icon-menu::before {
+    top: 8px;
+  }
+
+  .icon-menu::after {
+    bottom: 7px;
+  }
+
   .discount-label {
     width: 100px;
     height: 70px;
@@ -6856,24 +6876,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
             transform: rotate(45deg);
-  }
-}
-
-@media (max-width: 47.99875em) and (max-width: 575.98px) {
-  .icon-menu span,
-  .icon-menu::before,
-  .icon-menu::after {
-    left: 10px;
-    height: 3px;
-    width: 23px;
-  }
-
-  .icon-menu::before {
-    top: 8px;
-  }
-
-  .icon-menu::after {
-    bottom: 7px;
   }
 }
 
