@@ -2026,6 +2026,11 @@ body.touch .menu__list > li._active .menu__sub-list {
   -webkit-transition: background-color 0.2s ease-in-out;
   -o-transition: background-color 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
 }
 
 .card-slider__slide-title {
@@ -2048,6 +2053,7 @@ body.touch .menu__list > li._active .menu__sub-list {
   position: absolute;
   top: 20px;
   left: 0;
+  z-index: 2;
 }
 
 .card-slider__price {
@@ -5211,6 +5217,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     -webkit-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
+    position: relative;
   }
 
   .section-category__card:hover {
