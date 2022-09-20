@@ -127,10 +127,6 @@ body {
       overscroll-behavior: none;
 }
 
-.lock body header {
-  padding-right: 17px;
-}
-
 .wrapper {
   min-height: 100%;
   display: -webkit-box;
@@ -730,7 +726,6 @@ body::after {
       -ms-transform: translateX(0);
           transform: translateX(0);
   overflow-y: auto;
-  padding-right: 17px;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -1758,6 +1753,7 @@ body.touch .menu__list > li._active .menu__sub-list {
   position: absolute;
   bottom: 150px !important;
   left: 21% !important;
+  z-index: 20;
 }
 
 .intro__slider-pagination .swiper-pagination-bullet {
