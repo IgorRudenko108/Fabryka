@@ -120,7 +120,6 @@ body {
 }
 
 .lock body {
-  overflow: hidden;
   -ms-touch-action: none;
       touch-action: none;
   -ms-scroll-chaining: none;
@@ -1726,7 +1725,7 @@ body.touch .menu__list > li._active .menu__sub-list {
 .intro__proposal-title::after {
   content: "";
   position: absolute;
-  right: -23px;
+  right: -22px;
   border: 15px solid transparent;
   border-left: 8px solid #fff;
   border-top: 25px solid #fff;
@@ -5204,12 +5203,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 }
 
-@media (min-width: 767.98px) {
-  .lock body header {
-    padding-right: 17px;
-  }
-}
-
 @media (min-width: 48em) {
   .intro__proposal-title {
     padding-right: 3.75rem;
@@ -6445,6 +6438,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .choose-location__input {
     font-size: 14px;
+    height: 40px;
   }
 
   .choose-location__input::-webkit-input-placeholder {
@@ -6913,7 +6907,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .intro__proposal-title--first {
-    padding-right: 1.875rem;
+    padding-right: 1.25rem;
   }
 
   .advantages__card-title {
@@ -7189,15 +7183,15 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     }
 }
 
-@supports (padding-right: clamp( 1.875rem , -1.2063953488rem  +  11.6279069767vw , 4.375rem )) {
+@supports (padding-right: clamp( 1.25rem , -2.601744186rem  +  14.5348837209vw , 4.375rem )) {
     .intro__proposal-title--first {
-      padding-right: clamp( 1.875rem , -1.2063953488rem  +  11.6279069767vw , 4.375rem );
+      padding-right: clamp( 1.25rem , -2.601744186rem  +  14.5348837209vw , 4.375rem );
     }
 }
 
-@supports not (padding-right: clamp( 1.875rem , -1.2063953488rem  +  11.6279069767vw , 4.375rem )) {
+@supports not (padding-right: clamp( 1.25rem , -2.601744186rem  +  14.5348837209vw , 4.375rem )) {
     .intro__proposal-title--first {
-      padding-right: calc(1.875rem + 2.5 * (100vw - 26.5rem) / 21.5);
+      padding-right: calc(1.25rem + 3.125 * (100vw - 26.5rem) / 21.5);
     }
 }
 
