@@ -1099,7 +1099,7 @@ body.touch .menu__list > li._active .menu__sub-list {
 
 .discount-label {
   position: fixed;
-  top: 50%;
+  top: 50vh;
   left: -20px;
   width: 160px;
   -webkit-box-flex: 0;
@@ -6370,7 +6370,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .discount-label {
     width: 100px;
     height: 70px;
-    top: 40%;
+    top: 40vh;
   }
 
   .discount-label__text {
