@@ -1059,7 +1059,6 @@
                     },
                     focusCatch: true,
                     closeEsc: true,
-                    bodyLock: true,
                     hashSettings: {
                         location: true,
                         goHash: true
@@ -1107,7 +1106,6 @@
                         ...options?.on
                     }
                 };
-                this.bodyLock = false;
                 this.options.init ? this.initPopups() : null;
             }
             initPopups() {
@@ -1159,7 +1157,6 @@
             }
             open(selectorValue) {
                 if (bodyLockStatus) {
-                    this.bodyLock = document.documentElement.classList.contains("lock") && !this.isOpen ? true : false;
                     if (selectorValue && "string" === typeof selectorValue && "" !== selectorValue.trim()) {
                         this.targetOpen.selector = selectorValue;
                         this._selectorOpen = true;
@@ -1197,7 +1194,7 @@
                         }));
                         this.targetOpen.element.classList.add(this.options.classes.popupActive);
                         document.documentElement.classList.add(this.options.classes.bodyActive);
-                        if (!this._reopen) !this.bodyLock ? bodyLock() : null; else this._reopen = false;
+                        if (!this._reopen) ; else this._reopen = false;
                         this.targetOpen.element.setAttribute("aria-hidden", "false");
                         this.previousOpen.selector = this.targetOpen.selector;
                         this.previousOpen.element = this.targetOpen.element;
@@ -1230,7 +1227,6 @@
                 this.previousOpen.element.setAttribute("aria-hidden", "true");
                 if (!this._reopen) {
                     document.documentElement.classList.remove(this.options.classes.bodyActive);
-                    !this.bodyLock ? bodyUnlock() : null;
                     this.isOpen = false;
                 }
                 this._removeHash();
