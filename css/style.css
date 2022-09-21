@@ -1080,10 +1080,6 @@ body.touch .menu__list > li._active .menu__sub-list {
   display: none;
 }
 
-.icon-menu::after {
-  bottom: 10px;
-}
-
 .discount-label__wrapper {
   width: 100vw;
   height: 100vh;
@@ -6045,7 +6041,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .icon-menu::before {
-    top: 12px;
+    top: 10px;
   }
 
   .icon-menu::after {
@@ -6053,7 +6049,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .icon-menu span {
-    top: calc(50% - 0.1rem);
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
   }
 
   .menu-open .icon-menu span {
@@ -6067,14 +6066,20 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .menu-open .icon-menu::before {
-    top: calc(50% - 0.1rem);
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
     -webkit-transform: rotate(-45deg);
         -ms-transform: rotate(-45deg);
             transform: rotate(-45deg);
   }
 
   .menu-open .icon-menu::after {
-    top: calc(50% - 0.1rem);
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
     -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
             transform: rotate(45deg);
@@ -6309,6 +6314,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .form__wrapper {
     padding: 10px;
+    min-height: 146px;
   }
 
   .form__success-img {
@@ -6358,7 +6364,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .icon-menu::after {
-    bottom: 7px;
+    bottom: 8px;
   }
 
   .discount-label {
