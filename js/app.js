@@ -667,44 +667,6 @@
         let _slideToggle = (target, duration = 500) => {
             if (target.hidden) return _slideDown(target, duration); else return _slideUp(target, duration);
         };
-        let bodyLockStatus = true;
-        let bodyLockToggle = (delay = 500) => {
-            if (document.documentElement.classList.contains("lock")) bodyUnlock(delay); else bodyLock(delay);
-        };
-        let bodyUnlock = (delay = 500) => {
-            let body = document.querySelector("body");
-            if (bodyLockStatus) {
-                let lock_padding = document.querySelectorAll("[data-lp]");
-                setTimeout((() => {
-                    for (let index = 0; index < lock_padding.length; index++) {
-                        const el = lock_padding[index];
-                        el.style.paddingRight = "0px";
-                    }
-                    body.style.paddingRight = "0px";
-                    document.documentElement.classList.remove("lock");
-                }), delay);
-                bodyLockStatus = false;
-                setTimeout((function() {
-                    bodyLockStatus = true;
-                }), delay);
-            }
-        };
-        let bodyLock = (delay = 500) => {
-            let body = document.querySelector("body");
-            if (bodyLockStatus) {
-                let lock_padding = document.querySelectorAll("[data-lp]");
-                for (let index = 0; index < lock_padding.length; index++) {
-                    const el = lock_padding[index];
-                    el.style.paddingRight = window.innerWidth - document.querySelector(".wrapper").offsetWidth + "px";
-                }
-                body.style.paddingRight = window.innerWidth - document.querySelector(".wrapper").offsetWidth + "px";
-                document.documentElement.classList.add("lock");
-                bodyLockStatus = false;
-                setTimeout((function() {
-                    bodyLockStatus = true;
-                }), delay);
-            }
-        };
         function spollers() {
             const spollersArray = document.querySelectorAll("[data-spollers]");
             if (spollersArray.length > 0) {
@@ -884,10 +846,7 @@
         }
         function menuInit() {
             if (document.querySelector(".icon-menu")) document.addEventListener("click", (function(e) {
-                if (bodyLockStatus && e.target.closest(".icon-menu")) {
-                    bodyLockToggle();
-                    document.documentElement.classList.toggle("menu-open");
-                }
+                if (e.target.closest(".icon-menu")) document.documentElement.classList.toggle("menu-open");
             }));
         }
         function showMore() {
@@ -1156,66 +1115,64 @@
                 }
             }
             open(selectorValue) {
-                if (bodyLockStatus) {
-                    if (selectorValue && "string" === typeof selectorValue && "" !== selectorValue.trim()) {
-                        this.targetOpen.selector = selectorValue;
-                        this._selectorOpen = true;
-                    }
-                    if (this.isOpen) {
-                        this._reopen = true;
-                        this.close();
-                    }
-                    if (!this._selectorOpen) this.targetOpen.selector = this.lastClosed.selector;
-                    if (!this._reopen) this.previousActiveElement = document.activeElement;
-                    this.targetOpen.element = document.querySelector(this.targetOpen.selector);
-                    if (this.targetOpen.element) {
-                        if (this.youTubeCode) {
-                            const codeVideo = this.youTubeCode;
-                            const urlVideo = `https://www.youtube.com/embed/${codeVideo}?rel=0&showinfo=0&autoplay=1`;
-                            const iframe = document.createElement("iframe");
-                            iframe.setAttribute("allowfullscreen", "");
-                            const autoplay = this.options.setAutoplayYoutube ? "autoplay;" : "";
-                            iframe.setAttribute("allow", `${autoplay}; encrypted-media`);
-                            iframe.setAttribute("src", urlVideo);
-                            if (!this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`)) {
-                                this.targetOpen.element.querySelector(".popup__text").setAttribute(`${this.options.youtubePlaceAttribute}`, "");
-                            }
-                            this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`).appendChild(iframe);
-                        }
-                        if (this.options.hashSettings.location) {
-                            this._getHash();
-                            this._setHash();
-                        }
-                        this.options.on.beforeOpen(this);
-                        document.dispatchEvent(new CustomEvent("beforePopupOpen", {
-                            detail: {
-                                popup: this
-                            }
-                        }));
-                        this.targetOpen.element.classList.add(this.options.classes.popupActive);
-                        document.documentElement.classList.add(this.options.classes.bodyActive);
-                        if (!this._reopen) ; else this._reopen = false;
-                        this.targetOpen.element.setAttribute("aria-hidden", "false");
-                        this.previousOpen.selector = this.targetOpen.selector;
-                        this.previousOpen.element = this.targetOpen.element;
-                        this._selectorOpen = false;
-                        this.isOpen = true;
-                        setTimeout((() => {
-                            this._focusTrap();
-                        }), 50);
-                        this.options.on.afterOpen(this);
-                        document.dispatchEvent(new CustomEvent("afterPopupOpen", {
-                            detail: {
-                                popup: this
-                            }
-                        }));
-                        this.popupLogging(`Открыл попап`);
-                    } else this.popupLogging(`Ой ой, такого попапа нет.Проверьте корректность ввода. `);
+                if (selectorValue && "string" === typeof selectorValue && "" !== selectorValue.trim()) {
+                    this.targetOpen.selector = selectorValue;
+                    this._selectorOpen = true;
                 }
+                if (this.isOpen) {
+                    this._reopen = true;
+                    this.close();
+                }
+                if (!this._selectorOpen) this.targetOpen.selector = this.lastClosed.selector;
+                if (!this._reopen) this.previousActiveElement = document.activeElement;
+                this.targetOpen.element = document.querySelector(this.targetOpen.selector);
+                if (this.targetOpen.element) {
+                    if (this.youTubeCode) {
+                        const codeVideo = this.youTubeCode;
+                        const urlVideo = `https://www.youtube.com/embed/${codeVideo}?rel=0&showinfo=0&autoplay=1`;
+                        const iframe = document.createElement("iframe");
+                        iframe.setAttribute("allowfullscreen", "");
+                        const autoplay = this.options.setAutoplayYoutube ? "autoplay;" : "";
+                        iframe.setAttribute("allow", `${autoplay}; encrypted-media`);
+                        iframe.setAttribute("src", urlVideo);
+                        if (!this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`)) {
+                            this.targetOpen.element.querySelector(".popup__text").setAttribute(`${this.options.youtubePlaceAttribute}`, "");
+                        }
+                        this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`).appendChild(iframe);
+                    }
+                    if (this.options.hashSettings.location) {
+                        this._getHash();
+                        this._setHash();
+                    }
+                    this.options.on.beforeOpen(this);
+                    document.dispatchEvent(new CustomEvent("beforePopupOpen", {
+                        detail: {
+                            popup: this
+                        }
+                    }));
+                    this.targetOpen.element.classList.add(this.options.classes.popupActive);
+                    document.documentElement.classList.add(this.options.classes.bodyActive);
+                    if (!this._reopen) ; else this._reopen = false;
+                    this.targetOpen.element.setAttribute("aria-hidden", "false");
+                    this.previousOpen.selector = this.targetOpen.selector;
+                    this.previousOpen.element = this.targetOpen.element;
+                    this._selectorOpen = false;
+                    this.isOpen = true;
+                    setTimeout((() => {
+                        this._focusTrap();
+                    }), 50);
+                    this.options.on.afterOpen(this);
+                    document.dispatchEvent(new CustomEvent("afterPopupOpen", {
+                        detail: {
+                            popup: this
+                        }
+                    }));
+                    this.popupLogging(`Открыл попап`);
+                } else this.popupLogging(`Ой ой, такого попапа нет.Проверьте корректность ввода. `);
             }
             close(selectorValue) {
                 if (selectorValue && "string" === typeof selectorValue && "" !== selectorValue.trim()) this.previousOpen.selector = selectorValue;
-                if (!this.isOpen || !bodyLockStatus) return;
+                if (!this.isOpen) return;
                 this.options.on.beforeClose(this);
                 document.dispatchEvent(new CustomEvent("beforePopupClose", {
                     detail: {
