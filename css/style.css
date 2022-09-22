@@ -1758,12 +1758,6 @@ body.touch .menu__list > li._active .menu__sub-list {
   height: 100%;
 }
 
-.intro__slider-paginations {
-  position: absolute;
-  bottom: 160px !important;
-  left: 22% !important;
-}
-
 .intro__slider-pagination.swiper-pagination-bullets {
   position: absolute;
   bottom: 150px !important;
@@ -6139,6 +6133,11 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .work__form--mobile {
     padding-right: 20px;
+    margin-top: 20px;
+  }
+
+  .work-form__success {
+    margin-top: 20px;
   }
 
   .work__slider {
