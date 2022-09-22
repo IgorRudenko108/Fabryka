@@ -7377,7 +7377,12 @@ PERFORMANCE OF THIS SOFTWARE.
                         licenseKey: "7EC452A9-0CFD441C-BD984C7C-17C8456E",
                         speed: 500,
                         controls: true,
-                        showCloseIcon: true
+                        showCloseIcon: true,
+                        download: false,
+                        mobileSettings: {
+                            showCloseIcon: true,
+                            download: false
+                        }
                     })
                 });
             }));
