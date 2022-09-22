@@ -6254,9 +6254,13 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     min-height: 146px;
   }
 
+  .form__success {
+    padding: 10px 0;
+  }
+
   .form__success-img {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     margin: 0 20px 0 0;
   }
 
@@ -6288,12 +6292,17 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     width: 55px !important;
   }
 
+  .menu-open .icon-menu::before,
+  .menu-open .icon-menu::after {
+    width: 23px;
+  }
+
   .icon-menu span,
   .icon-menu::before,
   .icon-menu::after {
     left: 10px;
     height: 3px;
-    width: 23px;
+    width: 23px !important;
   }
 
   .icon-menu::before {
