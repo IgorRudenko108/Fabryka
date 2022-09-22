@@ -1758,6 +1758,12 @@ body.touch .menu__list > li._active .menu__sub-list {
   height: 100%;
 }
 
+.intro__slider-paginations {
+  position: absolute;
+  bottom: 160px !important;
+  left: 22% !important;
+}
+
 .intro__slider-pagination.swiper-pagination-bullets {
   position: absolute;
   bottom: 150px !important;
