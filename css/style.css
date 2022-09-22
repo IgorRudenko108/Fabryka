@@ -3217,6 +3217,12 @@ body .card-slider .swiper-pagination-bullet {
 
 .counters__item {
   margin: 0 10px;
+  min-width: 80px;
+  text-align: right;
+}
+
+.counters__item--year {
+  min-width: 35px;
 }
 
 .counter__text {
@@ -3321,6 +3327,7 @@ body .card-slider .swiper-pagination-bullet {
 .about__showmore {
   display: block;
   margin-left: auto;
+  margin-right: 15px;
 }
 
 .about__showmore-btn {
