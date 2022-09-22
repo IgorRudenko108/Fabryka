@@ -591,12 +591,36 @@
                 document.documentElement.classList.add(className);
             }));
         }
-        function functions_getHash() {
-            if (location.hash) return location.hash.replace("#", "");
-        }
-        function setHash(hash) {
-            hash = hash ? `#${hash}` : window.location.href.split("#")[0];
-            history.pushState("", "", hash);
+        let isMobile = {
+            Android: function() {
+                return navigator.userAgent.match(/Android/i);
+            },
+            BlackBerry: function() {
+                return navigator.userAgent.match(/BlackBerry/i);
+            },
+            iOS: function() {
+                return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+            },
+            Opera: function() {
+                return navigator.userAgent.match(/Opera Mini/i);
+            },
+            Windows: function() {
+                return navigator.userAgent.match(/IEMobile/i);
+            },
+            any: function() {
+                return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
+            }
+        };
+        function fullVHfix() {
+            const fullScreens = document.querySelectorAll("[data-fullscreen]");
+            if (fullScreens.length && isMobile.any()) {
+                window.addEventListener("resize", fixHeight);
+                function fixHeight() {
+                    let vh = .01 * window.innerHeight;
+                    document.documentElement.style.setProperty("--vh", `${vh}px`);
+                }
+                fixHeight();
+            }
         }
         let _slideUp = (target, duration = 500, showmore = 0) => {
             if (!target.classList.contains("_slide")) {
@@ -751,7 +775,7 @@
             const tabs = document.querySelectorAll("[data-tabs]");
             let tabsActiveHash = [];
             if (tabs.length > 0) {
-                const hash = functions_getHash();
+                const hash = getHash();
                 if (hash && hash.startsWith("tab-")) tabsActiveHash = hash.replace("tab-", "").split("-");
                 tabs.forEach(((tabsBlock, index) => {
                     tabsBlock.classList.add("_tab-init");
@@ -951,7 +975,7 @@
                 }
             }));
         }
-        function functions_FLS(message) {
+        function FLS(message) {
             setTimeout((() => {
                 if (window.FLS) console.log(message);
             }), 0);
@@ -1234,7 +1258,7 @@
                 if (!this.isOpen && this.lastFocusEl) this.lastFocusEl.focus(); else focusable[0].focus();
             }
             popupLogging(message) {
-                this.options.logging ? functions_FLS(`[Попапос]: ${message}`) : null;
+                this.options.logging ? FLS(`[Попапос]: ${message}`) : null;
             }
         }
         flsModules.popup = new Popup({});
@@ -5557,7 +5581,7 @@
                 this.scrollWatcherLogging(`Я перестал следить за ${targetElement.classList}`);
             }
             scrollWatcherLogging(message) {
-                this.config.logging ? functions_FLS(`[Наблюдатель]: ${message}`) : null;
+                this.config.logging ? FLS(`[Наблюдатель]: ${message}`) : null;
             }
             scrollWatcherCallback(entry, observer) {
                 const targetElement = entry.target;
@@ -5571,15 +5595,6 @@
             }
         }
         flsModules.watcher = new ScrollWatcher({});
-        let addWindowScrollEvent = false;
-        setTimeout((() => {
-            if (addWindowScrollEvent) {
-                let windowScroll = new Event("windowScroll");
-                window.addEventListener("scroll", (function(e) {
-                    document.dispatchEvent(windowScroll);
-                }));
-            }
-        }), 0);
         /*!
  * lightgallery | 2.6.0 | August 29th 2022
  * http://www.lightgalleryjs.com/
@@ -7421,6 +7436,7 @@ PERFORMANCE OF THIS SOFTWARE.
         window["FLS"] = false;
         isWebp();
         menuInit();
+        fullVHfix();
         spollers();
         tabs();
         showMore();
