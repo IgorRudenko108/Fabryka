@@ -5109,53 +5109,6 @@
             });
         }
         function initSliders() {
-            if (document.querySelector(".intro__slider")) new core(".intro__slider", {
-                modules: [ Pagination, Autoplay, Lazy ],
-                slidesPerView: 1,
-                spaceBetween: 0,
-                speed: 800,
-                loop: true,
-                lazy: true,
-                effect: "slide",
-                autoplay: {
-                    delay: 8e3,
-                    disableOnInteraction: false
-                },
-                pagination: {
-                    el: ".intro__slider-pagination",
-                    clickable: true
-                }
-            });
-            if (document.querySelector(".intro-card__slider")) new core(".intro-card__slider", {
-                modules: [ Lazy ],
-                observer: true,
-                observeParents: true,
-                slidesPerView: 2,
-                spaceBetween: 20,
-                autoHeight: false,
-                loop: false,
-                lazy: true,
-                breakpoints: {
-                    320: {
-                        slidesPerView: 1.2,
-                        spaceBetween: 20,
-                        grid: false,
-                        centeredSlides: false,
-                        loop: true
-                    },
-                    768: {
-                        slidesPerView: 1.5,
-                        spaceBetween: 20,
-                        grid: false,
-                        centeredSlides: false,
-                        loop: true,
-                        init: true
-                    },
-                    992: {
-                        init: false
-                    }
-                }
-            });
             if (document.querySelector(".section-category__slider")) new core(".section-category__slider", {
                 modules: [ Lazy ],
                 observer: true,
