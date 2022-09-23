@@ -591,36 +591,12 @@
                 document.documentElement.classList.add(className);
             }));
         }
-        let isMobile = {
-            Android: function() {
-                return navigator.userAgent.match(/Android/i);
-            },
-            BlackBerry: function() {
-                return navigator.userAgent.match(/BlackBerry/i);
-            },
-            iOS: function() {
-                return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-            },
-            Opera: function() {
-                return navigator.userAgent.match(/Opera Mini/i);
-            },
-            Windows: function() {
-                return navigator.userAgent.match(/IEMobile/i);
-            },
-            any: function() {
-                return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
-            }
-        };
-        function fullVHfix() {
-            const fullScreens = document.querySelectorAll("[data-fullscreen]");
-            if (fullScreens.length && isMobile.any()) {
-                window.addEventListener("resize", fixHeight);
-                function fixHeight() {
-                    let vh = .01 * window.innerHeight;
-                    document.documentElement.style.setProperty("--vh", `${vh}px`);
-                }
-                fixHeight();
-            }
+        function getHash() {
+            if (location.hash) return location.hash.replace("#", "");
+        }
+        function setHash(hash) {
+            hash = hash ? `#${hash}` : window.location.href.split("#")[0];
+            history.pushState("", "", hash);
         }
         let _slideUp = (target, duration = 500, showmore = 0) => {
             if (!target.classList.contains("_slide")) {
@@ -5148,8 +5124,7 @@
                 pagination: {
                     el: ".intro__slider-pagination",
                     clickable: true
-                },
-                on: {}
+                }
             });
             if (document.querySelector(".intro-card__slider")) new core(".intro-card__slider", {
                 modules: [ Lazy ],
@@ -7436,7 +7411,6 @@ PERFORMANCE OF THIS SOFTWARE.
         window["FLS"] = false;
         isWebp();
         menuInit();
-        fullVHfix();
         spollers();
         tabs();
         showMore();
