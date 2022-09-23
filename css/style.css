@@ -1926,13 +1926,11 @@ body.touch .menu__list > li._active .menu__sub-list {
 
 .section-category__slider {
   display: none;
-  max-height: 365px;
 }
 
 .section-category__slide .section-category__column {
   width: 100%;
   padding: 0;
-  max-width: 320px;
 }
 
 .section-category__inner {
@@ -1957,7 +1955,6 @@ body.touch .menu__list > li._active .menu__sub-list {
   width: 100%;
   max-width: 100%;
   height: 365px;
-  max-height: 365px;
 }
 
 .card-slide {
