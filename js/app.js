@@ -687,11 +687,15 @@
                         if (matchMedia.matches || !matchMedia) {
                             spollersBlock.classList.add("_spoller-init");
                             initSpollerBody(spollersBlock);
-                            spollersBlock.addEventListener("click", setSpollerAction);
+                            spollersBlock.addEventListener("click", setSpollerAction, {
+                                passive: true
+                            });
                         } else {
                             spollersBlock.classList.remove("_spoller-init");
                             initSpollerBody(spollersBlock, false);
-                            spollersBlock.removeEventListener("click", setSpollerAction);
+                            spollersBlock.removeEventListener("click", setSpollerAction, {
+                                passive: true
+                            });
                         }
                     }));
                 }
@@ -734,7 +738,9 @@
                     }
                 }
                 const spollersClose = document.querySelectorAll("[data-spoller-close]");
-                if (spollersClose.length) document.addEventListener("click", (function(e) {
+                if (spollersClose.length) document.addEventListener("click", {
+                    passive: true
+                }, (function(e) {
                     const el = e.target;
                     if (!el.closest("[data-spollers]")) spollersClose.forEach((spollerClose => {
                         const spollersBlock = spollerClose.closest("[data-spollers]");
@@ -756,12 +762,16 @@
                 tabs.forEach(((tabsBlock, index) => {
                     tabsBlock.classList.add("_tab-init");
                     tabsBlock.setAttribute("data-tabs-index", index);
-                    tabsBlock.addEventListener("click", setTabsAction);
+                    tabsBlock.addEventListener("click", setTabsAction, {
+                        passive: true
+                    });
                     initTabs(tabsBlock);
                 }));
                 let mdQueriesArray = dataMediaQueries(tabs, "tabs");
                 if (mdQueriesArray && mdQueriesArray.length) mdQueriesArray.forEach((mdQueriesItem => {
-                    mdQueriesItem.matchMedia.addEventListener("change", (function() {
+                    mdQueriesItem.matchMedia.addEventListener("change", {
+                        passive: true
+                    }, (function() {
                         setTitlePosition(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
                     }));
                     setTitlePosition(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
@@ -845,12 +855,16 @@
             }
         }
         function menuInit() {
-            if (document.querySelector(".icon-menu")) document.addEventListener("click", (function(e) {
+            if (document.querySelector(".icon-menu")) document.addEventListener("click", {
+                passive: true
+            }, (function(e) {
                 if (e.target.closest(".icon-menu")) document.documentElement.classList.toggle("menu-open");
             }));
         }
         function showMore() {
-            window.addEventListener("load", (function(e) {
+            window.addEventListener("load", {
+                passive: true
+            }, (function(e) {
                 const showMoreBlocks = document.querySelectorAll("[data-showmore]");
                 let showMoreBlocksRegular;
                 let mdQueriesArray;
@@ -859,12 +873,18 @@
                         return !item.dataset.showmoreMedia;
                     }));
                     showMoreBlocksRegular.length ? initItems(showMoreBlocksRegular) : null;
-                    document.addEventListener("click", showMoreActions);
-                    window.addEventListener("resize", showMoreActions);
+                    document.addEventListener("click", showMoreActions, {
+                        passive: true
+                    });
+                    window.addEventListener("resize", showMoreActions, {
+                        passive: true
+                    });
                     mdQueriesArray = dataMediaQueries(showMoreBlocks, "showmoreMedia");
                     if (mdQueriesArray && mdQueriesArray.length) {
                         mdQueriesArray.forEach((mdQueriesItem => {
-                            mdQueriesItem.matchMedia.addEventListener("change", (function() {
+                            mdQueriesItem.matchMedia.addEventListener("change", {
+                                passive: true
+                            }, (function() {
                                 initItems(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
                             }));
                         }));
@@ -1072,7 +1092,9 @@
                 this.eventsPopup();
             }
             eventsPopup() {
-                document.addEventListener("click", function(e) {
+                document.addEventListener("click", {
+                    passive: true
+                }, function(e) {
                     const buttonOpen = e.target.closest(`[${this.options.attributeOpenButton}]`);
                     if (buttonOpen) {
                         e.preventDefault();
@@ -1094,7 +1116,9 @@
                         return;
                     }
                 }.bind(this));
-                document.addEventListener("keydown", function(e) {
+                document.addEventListener("keydown", {
+                    passive: true
+                }, function(e) {
                     if (this.options.closeEsc && 27 == e.which && "Escape" === e.code && this.isOpen) {
                         e.preventDefault();
                         this.close();
@@ -1106,10 +1130,14 @@
                     }
                 }.bind(this));
                 if (this.options.hashSettings.goHash) {
-                    window.addEventListener("hashchange", function() {
+                    window.addEventListener("hashchange", {
+                        passive: true
+                    }, function() {
                         if (window.location.hash) this._openToHash(); else this.close(this.targetOpen.selector);
                     }.bind(this));
-                    window.addEventListener("load", function() {
+                    window.addEventListener("load", {
+                        passive: true
+                    }, function() {
                         if (window.location.hash) this._openToHash();
                     }.bind(this));
                 }
@@ -5467,7 +5495,9 @@
                 }
             });
         }
-        window.addEventListener("load", (function(e) {
+        window.addEventListener("load", {
+            passive: true
+        }, (function(e) {
             initSliders();
         }));
         var lazyload_min = __webpack_require__(732);
@@ -7304,7 +7334,9 @@ PERFORMANCE OF THIS SOFTWARE.
             }));
             flsModules.gallery = galleyItems;
         }
-        document.addEventListener("DOMContentLoaded", (function() {
+        document.addEventListener("DOMContentLoaded", {
+            passive: true
+        }, (function() {
             let eventCalllback = function(e) {
                 let el = e.target, clearVal = el.dataset.phoneClear, pattern = el.dataset.phonePattern, matrix_def = "+8(___) ___-__-__", matrix = pattern ? pattern : matrix_def, i = 0, def = matrix.replace(/\D/g, ""), val = e.target.value.replace(/\D/g, "");
                 if ("false" !== clearVal && "blur" === e.type) if (val.length < matrix.match(/([\_\d])/g).length) {
@@ -7317,7 +7349,9 @@ PERFORMANCE OF THIS SOFTWARE.
                 }));
             };
             let phone_inputs = document.querySelectorAll("[data-phone-pattern]");
-            for (let elem of phone_inputs) for (let ev of [ "input", "blur", "focus" ]) elem.addEventListener(ev, eventCalllback);
+            for (let elem of phone_inputs) for (let ev of [ "input", "blur", "focus" ]) elem.addEventListener(ev, eventCalllback, {
+                passive: true
+            });
         }));
         function getTimeRemaining(endtime) {
             let t = Date.parse(endtime) - Date.parse(new Date);
@@ -7363,13 +7397,17 @@ PERFORMANCE OF THIS SOFTWARE.
         formSuccess.forEach((elem => {
             formSuccessArray.push(elem);
         }));
-        for (let i = 0; i < formBtnArray.length; i++) if (formBtn) formBtnArray[i].addEventListener("click", (function(e) {
+        for (let i = 0; i < formBtnArray.length; i++) if (formBtn) formBtnArray[i].addEventListener("click", {
+            passive: true
+        }, (function(e) {
             e.preventDefault();
             formBodyArray[i].classList.add("form__close");
             formSuccessArray[i].classList.add("success__open");
         }));
         "use strict";
-        window.addEventListener("load", windowLoad);
+        window.addEventListener("load", windowLoad, {
+            passive: true
+        });
         function windowLoad() {
             function digitsCountersInit(digitsCountersItems) {
                 let digitsCounters = digitsCountersItems ? digitsCountersItems : document.querySelectorAll("[data-digits-counter]");
