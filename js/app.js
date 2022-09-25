@@ -4872,6 +4872,75 @@
                     clickable: true
                 }
             });
+            if (document.querySelector(".intro-card__slider")) new core(".intro-card__slider", {
+                modules: [ Lazy ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 2,
+                spaceBetween: 20,
+                autoHeight: false,
+                loop: false,
+                lazy: true,
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1.2,
+                        spaceBetween: 20,
+                        grid: false,
+                        centeredSlides: false,
+                        loop: true
+                    },
+                    768: {
+                        slidesPerView: 1.5,
+                        spaceBetween: 20,
+                        grid: false,
+                        centeredSlides: false,
+                        loop: true,
+                        init: true
+                    },
+                    992: {
+                        init: false
+                    }
+                }
+            });
+            if (document.querySelector(".about__slider")) new core(".about__slider", {
+                modules: [ Pagination, Lazy ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 4,
+                spaceBetween: 10,
+                autoHeight: false,
+                loop: true,
+                centeredSlides: false,
+                lazy: true,
+                pagination: {
+                    el: ".about__pagination",
+                    clickable: true
+                },
+                breakpoints: {
+                    320: {
+                        slidesPerView: 2.8,
+                        spaceBetween: 10
+                    },
+                    480: {
+                        slidesPerView: 3.5
+                    },
+                    576: {
+                        slidesPerView: 4,
+                        spaceBetween: 15
+                    },
+                    768: {
+                        spaceBetween: 15,
+                        slidesPerView: 5
+                    },
+                    992: {
+                        slidesPerView: 4,
+                        spaceBetween: 10
+                    },
+                    1200: {
+                        slidesPerView: 4
+                    }
+                }
+            });
         }
         window.addEventListener("load", (function(e) {
             initSliders();
