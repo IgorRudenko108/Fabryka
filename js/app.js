@@ -5076,6 +5076,48 @@
                     }
                 }
             });
+            if (document.querySelector(".company__slider")) new core(".company__slider", {
+                modules: [ Navigation, Lazy ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 4,
+                spaceBetween: 15,
+                autoHeight: false,
+                loop: true,
+                centeredSlides: false,
+                lazy: true,
+                navigation: {
+                    prevEl: ".company-button-prev",
+                    nextEl: ".company-button-next"
+                },
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1.3,
+                        spaceBetween: 10
+                    },
+                    424: {
+                        slidesPerView: 1.7,
+                        spaceBetween: 10
+                    },
+                    480: {
+                        slidesPerView: 2,
+                        spaceBetween: 10
+                    },
+                    576: {
+                        slidesPerView: 2.4,
+                        spaceBetween: 10
+                    },
+                    768: {
+                        slidesPerView: 3.2,
+                        spaceBetween: 15
+                    },
+                    992: {
+                        slidesPerView: 4,
+                        spaceBetween: 15,
+                        centeredSlides: false
+                    }
+                }
+            });
             if (document.querySelector(".about__slider")) new core(".about__slider", {
                 modules: [ Pagination, Lazy ],
                 observer: true,
