@@ -1957,6 +1957,10 @@ body.touch .menu__list > li._active .menu__sub-list {
   height: 365px;
 }
 
+.card-slider__slide {
+  max-width: 285px;
+}
+
 .card-slide {
   -webkit-box-shadow: 0px -5px 15px 5px rgba(0, 0, 0, 0.05);
           box-shadow: 0px -5px 15px 5px rgba(0, 0, 0, 0.05);
@@ -1968,6 +1972,7 @@ body.touch .menu__list > li._active .menu__sub-list {
   -o-object-fit: cover;
      object-fit: cover;
   max-width: 100%;
+  max-width: 285px;
 }
 
 .card-slider__slide-inner {
