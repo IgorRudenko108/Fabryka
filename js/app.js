@@ -5191,6 +5191,49 @@
                     }
                 }
             });
+            $(document).ready((function() {
+                if (document.querySelector(".card-slider")) {
+                    let productSlider = document.querySelectorAll(".card-slider");
+                    let pagination = document.querySelectorAll(".swiper-pagination");
+                    let visualPaginationBullets = document.querySelectorAll(".swiper-pagination-visual");
+                    productSlider.forEach(((slider, index) => {
+                        const swiper = new core(slider, {
+                            modules: [ Pagination, Controller ],
+                            centeredSlides: true,
+                            spaceBetween: 0,
+                            pagination: {
+                                el: pagination[index],
+                                clickable: true
+                            },
+                            breakpoints: {
+                                320: {
+                                    init: false
+                                },
+                                992: {
+                                    init: true
+                                }
+                            },
+                            on: {
+                                init: function() {
+                                    setTimeout((function() {
+                                        $(swiper.$el).find(".swiper-pagination-bullet").hover((function() {
+                                            swiper.slideTo($(this).index());
+                                        }));
+                                    }), 500);
+                                }
+                            }
+                        });
+                        const visualPagination = new core(slider, {
+                            modules: [ Pagination, Controller ],
+                            pagination: {
+                                el: visualPaginationBullets[index],
+                                clickable: false
+                            }
+                        });
+                        swiper.controller.control = visualPagination;
+                    }));
+                }
+            }));
             if (document.querySelector(".work__slider")) new core(".work__slider", {
                 modules: [ Lazy ],
                 observer: true,
@@ -5219,7 +5262,7 @@
                 }
             });
             if (document.querySelector(".stars__slider")) new core(".stars__slider", {
-                modules: [ Navigation, Lazy ],
+                modules: [ Navigation, Autoplay, Lazy ],
                 observer: true,
                 observeParents: true,
                 slidesPerView: 4,
@@ -5423,49 +5466,6 @@
                     }
                 }
             });
-            $(document).ready((function() {
-                if (document.querySelector(".card-slider")) {
-                    let productSlider = document.querySelectorAll(".card-slider");
-                    let pagination = document.querySelectorAll(".swiper-pagination");
-                    let visualPaginationBullets = document.querySelectorAll(".swiper-pagination-visual");
-                    productSlider.forEach(((slider, index) => {
-                        const swiper = new core(slider, {
-                            modules: [ Pagination, Controller ],
-                            centeredSlides: true,
-                            spaceBetween: 0,
-                            pagination: {
-                                el: pagination[index],
-                                clickable: true
-                            },
-                            breakpoints: {
-                                320: {
-                                    init: false
-                                },
-                                992: {
-                                    init: true
-                                }
-                            },
-                            on: {
-                                init: function() {
-                                    setTimeout((function() {
-                                        $(swiper.$el).find(".swiper-pagination-bullet").hover((function() {
-                                            swiper.slideTo($(this).index());
-                                        }));
-                                    }), 500);
-                                }
-                            }
-                        });
-                        const visualPagination = new core(slider, {
-                            modules: [ Pagination, Controller ],
-                            pagination: {
-                                el: visualPaginationBullets[index],
-                                clickable: false
-                            }
-                        });
-                        swiper.controller.control = visualPagination;
-                    }));
-                }
-            }));
         }
         window.addEventListener("load", (function(e) {
             initSliders();
