@@ -1241,11 +1241,11 @@
         function ssr_window_esm_isObject(obj) {
             return null !== obj && "object" === typeof obj && "constructor" in obj && obj.constructor === Object;
         }
-        function extend(target = {}, src = {}) {
-            Object.keys(src).forEach((key => {
-                if ("undefined" === typeof target[key]) target[key] = src[key]; else if (ssr_window_esm_isObject(src[key]) && ssr_window_esm_isObject(target[key]) && Object.keys(src[key]).length > 0) extend(target[key], src[key]);
-            }));
-        }
+        // function extend(target = {}, src = {}) {
+        //     Object.keys(src).forEach((key => {
+        //         if ("undefined" === typeof target[key]) target[key] = src[key]; else if (ssr_window_esm_isObject(src[key]) && ssr_window_esm_isObject(target[key]) && Object.keys(src[key]).length > 0) extend(target[key], src[key]);
+        //     }));
+        // }
         const ssrDocument = {
             body: {},
             addEventListener() {},
@@ -1370,14 +1370,14 @@
                 }
             });
         }
-        class Dom7 extends Array {
-            constructor(items) {
-                if ("number" === typeof items) super(items); else {
-                    super(...items || []);
-                    makeReactive(this);
-                }
-            }
-        }
+        // class Dom7 extends Array {
+        //     constructor(items) {
+        //         if ("number" === typeof items) super(items); else {
+        //             super(...items || []);
+        //             makeReactive(this);
+        //         }
+        //     }
+        // }
         function arrayFlat(arr = []) {
             const res = [];
             arr.forEach((el => {
@@ -2294,7 +2294,7 @@
             let width;
             let height;
             const $el = swiper.$el;
-            if ("undefined" !== typeof swiper.params.width && null !== swiper.params.width) width = swiper.params.width; else width = $el[0].clientWidth;
+            // if ("undefined" !== typeof swiper.params.width && null !== swiper.params.width) width = swiper.params.width; else width = $el[0].clientWidth;
             if ("undefined" !== typeof swiper.params.height && null !== swiper.params.height) height = swiper.params.height; else height = $el[0].clientHeight;
             if (0 === width && swiper.isHorizontal() || 0 === height && swiper.isVertical()) return;
             width = width - parseInt($el.css("padding-left") || 0, 10) - parseInt($el.css("padding-right") || 0, 10);
