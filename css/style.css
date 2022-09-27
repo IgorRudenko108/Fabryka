@@ -481,6 +481,11 @@ body::after {
   visibility: visible;
 }
 
+.lg-close {
+  position: relative;
+  z-index: 1060;
+}
+
 .icon-menu {
   display: none;
   background-color: #12b244;
@@ -1717,7 +1722,6 @@ body.touch .menu__list > li._active .menu__sub-list {
   height: 100%;
   width: 100%;
   background-color: #e8e8e8;
-  border: 3px solid transparent;
 }
 
 .card-slider__slide-bottom {
