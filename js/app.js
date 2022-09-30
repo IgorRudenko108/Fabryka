@@ -5110,7 +5110,7 @@
         }
         function initSliders() {
             if (document.querySelector(".intro__slider")) new core(".intro__slider", {
-                modules: [ Pagination, Autoplay, Lazy ],
+                modules: [ Autoplay, Lazy ],
                 slidesPerView: 1,
                 spaceBetween: 0,
                 speed: 800,
@@ -5120,10 +5120,6 @@
                 autoplay: {
                     delay: 8e3,
                     disableOnInteraction: false
-                },
-                pagination: {
-                    el: ".intro__slider-pagination",
-                    clickable: false
                 }
             });
             if (document.querySelector(".intro-card__slider")) new core(".intro-card__slider", {
